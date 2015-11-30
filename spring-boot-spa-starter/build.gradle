@@ -1,0 +1,22 @@
+//apply plugins
+[
+        'java',
+        'spring-boot'
+].each { apply plugin: it }
+
+ext {
+    jcommanderVersion = '1.48'
+    retrofitVersion = '2.0.0-beta2'
+}
+
+group = 'com.jlg'
+version = '1.0.0'
+
+jar {
+    baseName = 'cloud-env-cli-spring-boot-spa-starter'
+}
+
+dependencies {
+    compile project(":digital-ocean")
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}

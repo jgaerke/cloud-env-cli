@@ -1,0 +1,54 @@
+{
+  "name" : "default",
+  "status" : "pending",
+  "domain" : {
+    "name" : "some-domain.com",
+    "ipAddress" : "1.1.1.1",
+    "server" : null
+  },
+  "servers" : [ {
+    "id" : null,
+    "name" : "db",
+    "type" : "db",
+    "image" : "mongodb",
+    "size" : "1gb",
+    "region" : "nyc3",
+    "privatelyNetworked" : false,
+    "ipAddress" : null,
+    "status" : "pending",
+    "environment" : [ "aws.access.key.id", "aws.secret.access.key", "aws.s3.db.backup.bucket.name", "db.name", "db.port", "db.admin.user.name", "db.admin.user.password", "db.user.name", "db.user.password" ]
+  }, {
+    "id" : null,
+    "name" : "app-1",
+    "type" : "app",
+    "image" : "ubuntu-15-04-x64",
+    "size" : "1gb",
+    "region" : "nyc3",
+    "privatelyNetworked" : false,
+    "ipAddress" : null,
+    "status" : "pending",
+    "environment" : [ ]
+  }, {
+    "id" : null,
+    "name" : "app-2",
+    "type" : "app",
+    "image" : "ubuntu-15-04-x64",
+    "size" : "1gb",
+    "region" : "nyc3",
+    "privatelyNetworked" : false,
+    "ipAddress" : null,
+    "status" : "pending",
+    "environment" : [ ]
+  }, {
+    "id" : null,
+    "name" : "rp",
+    "type" : "rp",
+    "image" : "ubuntu-15-04-x64",
+    "size" : "512mb",
+    "region" : "nyc3",
+    "privatelyNetworked" : false,
+    "ipAddress" : null,
+    "status" : "pending",
+    "environment" : [ ]
+  } ]
+}

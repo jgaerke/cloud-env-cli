@@ -1,0 +1,4 @@
+rootProject.name = 'cloud-env-cli'
+include 'common'
+include 'digital-ocean'
+include 'spring-boot-spa-starter'

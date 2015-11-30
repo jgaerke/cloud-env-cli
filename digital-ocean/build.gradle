@@ -1,0 +1,30 @@
+//apply plugins
+[
+        'java'
+].each { apply plugin: it }
+
+ext {
+    jcommanderVersion = '1.48'
+    retrofitVersion = '2.0.0-beta2'
+}
+
+group = 'com.jlg'
+version = '1.0.0'
+
+jar {
+    baseName = 'env-cli-digital-ocean'
+}
+
+dependencies {
+    compile project(":common"),
+            "commons-beanutils:commons-beanutils:${commonBeanUtilsVersion}",
+            "com.google.guava:guava:${guavaVersion}",
+            "org.springframework.boot:spring-boot-starter:${springBootVersion}",
+            "org.slf4j:slf4j-api:${slf4jVersion}",
+            "org.projectlombok:lombok:${lombokVersion}",
+            "commons-io:commons-io:${commonsIOVersion}",
+            "com.beust:jcommander:${jcommanderVersion}",
+            "com.squareup.retrofit:retrofit:${retrofitVersion}",
+            "com.squareup.retrofit:converter-jackson:${retrofitVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+}
