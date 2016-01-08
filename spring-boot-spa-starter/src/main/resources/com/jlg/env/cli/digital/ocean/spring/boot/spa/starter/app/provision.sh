@@ -6,7 +6,6 @@ SERVER_IP_ADDRESS=$1
 #clear keygen history
 ssh-keygen -R $SERVER_IP_ADDRESS
 
-scp -oStrictHostKeyChecking=no backup.sh root@$SERVER_IP_ADDRESS:/root
 
 #run provisioning scripts
 ssh -oStrictHostKeyChecking=no root@$SERVER_IP_ADDRESS "mkdir app"

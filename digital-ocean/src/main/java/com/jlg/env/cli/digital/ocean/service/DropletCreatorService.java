@@ -90,6 +90,7 @@ public class DropletCreatorService {
   private void addSSHKeyIfProvided(Map<String, Object> request) {
     String sshKey = propertyResolver.getProperty("digital.ocean.ssh.key");
     if (!isNullOrEmpty(sshKey)) {
+      System.out.println("SSH KEY: " + sshKey);
       request.put("ssh_keys", singletonList(sshKey));
     }
   }

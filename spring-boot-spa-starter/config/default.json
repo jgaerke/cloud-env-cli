@@ -1,54 +1,54 @@
 {
   "name" : "default",
-  "status" : "pending",
+  "status" : "created",
   "domain" : {
-    "name" : "some-domain.com",
-    "ipAddress" : "1.1.1.1",
+    "name" : "warminterview.com",
+    "ipAddress" : "45.55.99.148",
     "server" : null
   },
   "servers" : [ {
-    "id" : null,
-    "name" : "db",
+    "id" : "9928772",
+    "name" : "default-db",
     "type" : "db",
     "image" : "mongodb",
     "size" : "1gb",
     "region" : "nyc3",
     "privatelyNetworked" : false,
-    "ipAddress" : null,
-    "status" : "pending",
+    "ipAddress" : "45.55.215.242",
+    "status" : "provisioned",
     "environment" : [ "aws.access.key.id", "aws.secret.access.key", "aws.s3.db.backup.bucket.name", "db.name", "db.port", "db.admin.user.name", "db.admin.user.password", "db.user.name", "db.user.password" ]
   }, {
-    "id" : null,
-    "name" : "app-1",
+    "id" : "9928773",
+    "name" : "default-app-1",
     "type" : "app",
     "image" : "ubuntu-15-04-x64",
     "size" : "1gb",
     "region" : "nyc3",
     "privatelyNetworked" : false,
-    "ipAddress" : null,
-    "status" : "pending",
+    "ipAddress" : "45.55.199.101",
+    "status" : "provisioned",
     "environment" : [ ]
   }, {
-    "id" : null,
-    "name" : "app-2",
+    "id" : "9928771",
+    "name" : "default-app-2",
     "type" : "app",
     "image" : "ubuntu-15-04-x64",
     "size" : "1gb",
     "region" : "nyc3",
     "privatelyNetworked" : false,
-    "ipAddress" : null,
-    "status" : "pending",
+    "ipAddress" : "159.203.112.242",
+    "status" : "provisioned",
     "environment" : [ ]
   }, {
-    "id" : null,
-    "name" : "rp",
+    "id" : "9928770",
+    "name" : "default-rp",
     "type" : "rp",
     "image" : "ubuntu-15-04-x64",
     "size" : "512mb",
     "region" : "nyc3",
     "privatelyNetworked" : false,
-    "ipAddress" : null,
-    "status" : "pending",
+    "ipAddress" : "104.131.21.147",
+    "status" : "provisioned",
     "environment" : [ ]
   } ]
 }

@@ -1,4 +1,4 @@
-package com.jlg.cloud.env.cli.digital.ocean.spring.boot.spa.starter;
+package com.jlg.env.cli.digital.ocean.spring.boot.spa.starter;
 
 import com.google.common.base.Strings;
 import com.jlg.env.cli.common.Environment;
@@ -14,7 +14,7 @@ public class Operations {
   private static final String DB_BACKUP_SCRIPT_NAME = "exec-backup";
   private static final String DB_RESTORE_SCRIPT_NAME = "exec-restore";
   private static final String DB_RESTORE_LATEST_SCRIPT_NAME = "exec-restore-latest";
-  private static final String APP_DEPLOY_SCRIPT_NAME = "deploy";
+  private static final String APP_DEPLOY_SCRIPT_NAME = "exec-deploy";
 
   private final Environment environment;
 

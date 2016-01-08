@@ -41,11 +41,11 @@ public class ScriptService {
       StringBuilder builder = new StringBuilder();
       builder.append("#!/bin/bash" + NEW_LINE_CHAR);
       builder.append("ssh-keygen -R " + server.getIpAddress() + NEW_LINE_CHAR);
-      builder.append("ssh -oStrictHostKeyChecking=no root@" + server.getIpAddress() + " '");
+      builder.append("ssh -oStrictHostKeyChecking=no root@" + server.getIpAddress() + " \"");
       environmentVariables.forEach((k, v) -> {
-        builder.append("echo " + k.toUpperCase() + "=" + v + " >> /etc/environment; ");
+        builder.append("echo '" + k.toUpperCase() + "=\\\"" + v + "\\\"' >> /etc/environment; ");
       });
-      builder.append("' source /etc/environment");
+      builder.append("\" source /etc/environment");
       fileService.write(getServerScopedWorkingDir(server), new ByteArrayInputStream(builder.toString().getBytes()),
           "environment.sh");
       execute(server, "environment");

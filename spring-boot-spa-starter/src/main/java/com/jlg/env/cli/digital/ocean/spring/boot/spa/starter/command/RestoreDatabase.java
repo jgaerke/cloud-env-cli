@@ -1,8 +1,8 @@
-package com.jlg.cloud.env.cli.digital.ocean.spring.boot.spa.starter.command;
+package com.jlg.env.cli.digital.ocean.spring.boot.spa.starter.command;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
-import com.jlg.cloud.env.cli.digital.ocean.spring.boot.spa.starter.Operations;
+import com.jlg.env.cli.digital.ocean.spring.boot.spa.starter.Operations;
 import com.jlg.env.cli.common.EnvironmentConfiguration;
 import com.jlg.env.cli.common.command.Command;
 import lombok.Getter;

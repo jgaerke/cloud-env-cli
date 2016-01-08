@@ -81,8 +81,14 @@ public class Environment {
           created.forEach(c -> {
             variables.put("SERVER_" + c.getName().toUpperCase().replace("-", "_") + "_IP_ADDRESS", c.getIpAddress());
           });
-          s.getEnvironment().forEach(k -> {
-            variables.put(k.toUpperCase().replace(".", "_"), propertyResolver.getProperty(k));
+          System.out.println("ENVIRONMENT VARIABLES:");
+          variables.put("ENVIRONMENT_NAME", name.toUpperCase());
+          System.out.println("KEY: ENVIRONMENT_NAME VALUE: " + name);
+          s.getEnvironment().stream().filter(e -> !e.equals("environment.name")).forEach(k -> {
+            String formattedKey = k.toUpperCase().replace(".", "_");
+            String value = propertyResolver.getProperty(k);
+            System.out.println("KEY: " + formattedKey + " VALUE: " + value);
+            variables.put(formattedKey, value);
           });
           return s.provision(variables.build());
         }))

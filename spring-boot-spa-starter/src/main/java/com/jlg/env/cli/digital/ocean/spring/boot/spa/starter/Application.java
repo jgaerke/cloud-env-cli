@@ -1,4 +1,4 @@
-package com.jlg.cloud.env.cli.digital.ocean.spring.boot.spa.starter;
+package com.jlg.env.cli.digital.ocean.spring.boot.spa.starter;
 
 import com.google.common.collect.Lists;
 import com.jlg.env.cli.common.command.CommandExecutor;
@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +38,14 @@ public class Application {
 
   private static List<String> getMissingEnvironment() {
     Map<String, String> environment = System.getenv();
-    List<String> requiredVars = Lists.newArrayList(
+    List<String> requiredVars = getRequiredVars();
+    return requiredVars.stream()
+        .filter(v -> !environment.containsKey(v) || isNullOrEmpty(environment.get(v)))
+        .collect(toList());
+  }
+
+  private static List<String> getRequiredVars() {
+    return Lists.newArrayList(
         "AWS_ACCESS_KEY_ID",
         "AWS_SECRET_ACCESS_KEY",
         "AWS_S3_DB_BACKUP_BUCKET_NAME",
@@ -49,10 +57,11 @@ public class Application {
         "DIGITAL_OCEAN_API_BASE_URL",
         "DIGITAL_OCEAN_API_TOKEN",
         "DIGITAL_OCEAN_DROPLET_CREATION_WAIT_TIME_IN_SECONDS",
-        "DIGITAL_OCEAN_SSH_KEY"
+        "DIGITAL_OCEAN_SSH_KEY",
+        "MAILGUN_API_TOKEN",
+        "MAILGUN_API_BASE_URL",
+        "MAILGUN_DOMAIN",
+        "MAILGUN_FROM_ACCOUNT"
     );
-    return requiredVars.stream()
-        .filter(v -> !environment.containsKey(v) || isNullOrEmpty(environment.get(v)))
-        .collect(toList());
   }
 }
